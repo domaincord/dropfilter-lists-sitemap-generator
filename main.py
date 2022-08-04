@@ -30,6 +30,8 @@ def get_all_drop_lists_from_service_index(service_index_url):
 
 def main():
     sitemap_generator.index_required = True
+    sitemap_generator.sitemap_url = 'https://lists.dropfilter.app/'
+
     service_index_urls = get_all_supported_service_indexes()
     for service_index_url in service_index_urls:
         sitemap_generator.add(f"{BASE_URL}/{service_index_url}", changefreq='daily', priority=0.9)
